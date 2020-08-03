@@ -1,20 +1,19 @@
 package com.twu.refactoring.impl;
 
-import com.twu.refactoring.DirectionFactory;
-import com.twu.refactoring.DirectionType;
+import com.twu.refactoring.Direction;
 import com.twu.refactoring.IDirection;
 
 public class South implements IDirection {
 
     @Override
-    public IDirection turnLeft() {
-        return DirectionFactory.getDirection(DirectionType.EAST);
+    public Direction turnLeft() {
+        return new Direction('E');
 
     }
 
     @Override
-    public IDirection turnRight() {
-        return DirectionFactory.getDirection(DirectionType.WEST);
+    public Direction turnRight() {
+        return new Direction('W');
 
     }
 }

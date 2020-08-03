@@ -7,15 +7,15 @@ import com.twu.refactoring.impl.West;
 
 public class DirectionFactory {
 
-    public static IDirection getDirection(DirectionType directionType) {
-        switch (directionType) {
-            case EAST:
+    public static IDirection getDirection(char direction) {
+        switch (direction) {
+            case 'E':
                 return new East();
-            case WEST:
+            case 'W':
                 return new West();
-            case NORTH:
+            case 'N':
                 return new North();
-            case SOUTH:
+            case 'S':
             default:
                 throw new IllegalArgumentException();
         }

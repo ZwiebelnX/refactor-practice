@@ -4,29 +4,14 @@ public class Direction {
     private final IDirection direction;
 
     public Direction(char direction) {
-        switch (direction) {
-            case 'N':
-                this.direction = DirectionFactory.getDirection(DirectionType.NORTH);
-                break;
-            case 'S':
-                this.direction = DirectionFactory.getDirection(DirectionType.SOUTH);
-                break;
-            case 'E':
-                this.direction = DirectionFactory.getDirection(DirectionType.EAST);
-                break;
-            case 'W':
-                this.direction = DirectionFactory.getDirection(DirectionType.WEST);
-                break;
-            default:
-                throw new IllegalArgumentException();
-        }
+        this.direction = DirectionFactory.getDirection(direction);
     }
 
-    public IDirection turnRight() {
+    public Direction turnRight() {
         return direction.turnRight();
     }
 
-    public IDirection turnLeft() {
+    public Direction turnLeft() {
         return direction.turnLeft();
     }
 
