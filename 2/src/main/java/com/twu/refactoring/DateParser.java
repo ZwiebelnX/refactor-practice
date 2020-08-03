@@ -26,6 +26,8 @@ public class DateParser {
         this.dateAndTimeString = dateAndTimeString;
     }
 
+    //TODO too long , too much try-catch
+    //TODO how to refactor ?
     public Date parse() {
         int year, month, date, hour, minute;
 

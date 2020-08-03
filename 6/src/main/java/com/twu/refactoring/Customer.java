@@ -20,6 +20,7 @@ public class Customer {
 		return name;
 	}
 
+	// TODO too much jobs for this method ...
 	public String statement() {
 		double totalAmount = 0;
 		int frequentRenterPoints = 0;
