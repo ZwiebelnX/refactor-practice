@@ -1,40 +1,33 @@
 package com.twu.refactoring;
 
 public class Direction {
-    private final char direction;
+    private final IDirection direction;
 
     public Direction(char direction) {
-        this.direction = direction;
-    }
-
-    public Direction turnRight() {
         switch (direction) {
             case 'N':
-                return new Direction('E');
+                this.direction = DirectionFactory.getDirection(DirectionType.NORTH);
+                break;
             case 'S':
-                return new Direction('W');
+                this.direction = DirectionFactory.getDirection(DirectionType.SOUTH);
+                break;
             case 'E':
-                return new Direction('N');
+                this.direction = DirectionFactory.getDirection(DirectionType.EAST);
+                break;
             case 'W':
-                return new Direction('S');
+                this.direction = DirectionFactory.getDirection(DirectionType.WEST);
+                break;
             default:
                 throw new IllegalArgumentException();
         }
     }
 
-    public Direction turnLeft() {
-        switch (direction) {
-            case 'N':
-                return new Direction('W');
-            case 'S':
-                return new Direction('E');
-            case 'E':
-                return new Direction('N');
-            case 'W':
-                return new Direction('S');
-            default:
-                throw new IllegalArgumentException();
-        }
+    public IDirection turnRight() {
+        return direction.turnRight();
+    }
+
+    public IDirection turnLeft() {
+        return direction.turnLeft();
     }
 
     @Override
@@ -49,10 +42,6 @@ public class Direction {
         return true;
     }
 
-    @Override
-    public int hashCode() {
-        return (int) direction;
-    }
 
     @Override
     public String toString() {
